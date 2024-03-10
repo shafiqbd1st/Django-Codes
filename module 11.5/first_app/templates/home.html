@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<!-- card section -->
+<div class="service-container row container m-auto">
+  {% for i in data %}
+  <div class="box col-lg-4 container m-auto mb-2">
+    <div class="card text-center p-3 border-0" style="width: 18rem">
+      <img
+        class="img-fluid w-100 m-auto"
+        src="{{i.strMealThumb}}"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{i.strMeal}}</h5>
+        <a href="#" class="btn btn-primary">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+{% load static %}
+<!-- <link rel="stylesheet" href="{% static 'css/style.css' %}" /> -->
+<!-- <link rel="stylesheet" href="/meal/static/css/style.css" /> -->
+<section class="p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+  <div class="container">
+    <div class="d-sm-flex row align-items-center justify-content-between">
+      <div class="col-lg-6 pt-5">
+        <h1>Well come <span class="text-warning"> "My Restaurant" </span></h1>
+        <p class="lead my-4">
+          Are you hungry? Did you have a long and stressful day? Are you
+          interested in getting a cheesy pizza delivered to your office or
+          looking to avoid the weekly shop? Then my restaurant is the right
+          destination for you! foodpanda offers a long and detailed list of the
+          best restaurants and shops near you to help make your every day easier
+        </p>
+       
+
+            <button type="button" class="btn btn-success"><a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'menu' %}"
+                >Visit Our Food items</a
+              ></button>
+              
+        
+      </div>
+      <!-- ------------------------------------- -->
+      <!-- <img
+        class="img-fluid w-50 d-none d-sm-block"
+        src="{% static 'images/image.jpg' %}"
+        alt=""
+      /> -->
+      <div
+        id="carouselExampleSlidesOnly"
+        class="carousel slide col-lg-6 pt-5"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner d-none d-sm-block">
+          <div class="carousel-item active">
+            <img
+              src="{% static 'images/image.jpg' %}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          
+          <div class="carousel-item">
+            <img
+              src="{% static 'images/image2.jpg' %}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+      </div>
+      <!-- --------------------------------------------- -->
+    </div>
+  </div>
+</section>
+
+{% endblock %}

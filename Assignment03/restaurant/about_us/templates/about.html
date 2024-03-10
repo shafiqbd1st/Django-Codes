@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<div class="bg-danger-subtle">
+
+
+<div class="d-flex row  container m-auto text-center p-1 justify-content-center align-items-center">
+
+    <div class="container col-lg-6">
+        <h1>About Us</h1>
+        <h5>
+            <span class="text-success"> "My Restaurant" </span>
+           is one of the top ten Restaurants in Bangladesh. Our food
+          quality is very good. We make every ingredient of our food in our recipe.
+          Our service quality is very good. We deliver food on time.
+        </h5>
+    </div>
+    <div class="col-lg-6">
+        <div>
+  <img class="w-100 pt-5" src="{% static '/images/image4.jpg' %}" alt="" />
+</div>
+    </div>
+</div>
+<div class="mt-3 p-2">
+<h1 class="text-center text-danger">Contact with us</h1>
+<h1 class="text-center">Phone: 0123456789</h1>
+</div>
+</div>
+{% endblock %}

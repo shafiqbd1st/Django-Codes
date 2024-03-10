@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    <!-- this is table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">userID</th>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">body</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in data %}
+        <tr>
+          <th scope="row">{{i.userId}}</th>
+          <td>{{i.id}}</td>
+          <td>{{i.title}}</td>
+          <td>{{i.body}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <!-- end table -->
+ {% endblock %}
