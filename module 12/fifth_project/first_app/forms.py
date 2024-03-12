@@ -40,5 +40,5 @@ class contactForm(forms.Form):
 #             raise forms.ValidationError("Your email must contain .com")
 
 class studentData(forms.Form):
-    name = forms.CharField(validators=[validators.MinlengthValidator(10, message="Please enter at least 10 characters")])
-    email = forms.CharField(widget=forms.EmailInput)
+    name = forms.CharField(validators=[validators.MinLengthValidator(10, message="Please enter at least 10 characters")])
+    email = forms.CharField(widget=forms.EmailInput, validators=[validators.EmailValidator(message="Please enter a valid email address")])
