@@ -1,9 +1,13 @@
 from django import forms
 
 class contactForm(forms.Form):
-    Name = forms.CharField(max_length=200, label="User name", widget=forms.TextInput(attrs={'placeholder': "Enter your name"} ))
+    Name = forms.CharField(
+        max_length=200,
+        label="User name",
+        widget=forms.TextInput(attrs={"placeholder": "Enter your name"}),
+    )
     Email = forms.EmailField(max_length=200, label="User Email",widget=forms.TextInput(attrs={'placeholder': "Enter your Email"} ))
-    Age = forms.IntegerField()
+    Age = forms.IntegerField(required=False)
     Gender = forms.ChoiceField(choices=[('m','male'), ('f', 'female')])
     birthday = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
     value = [('s', 'small'), ('m', 'medium'), ('l', 'large')]
