@@ -1,30 +1,40 @@
 from django import forms
 
+
 class contactForm(forms.Form):
     Name = forms.CharField(
         max_length=200,
         label="User name",
         widget=forms.TextInput(attrs={"placeholder": "Enter your name"}),
     )
-    Email = forms.EmailField(max_length=200, label="User Email",widget=forms.TextInput(attrs={'placeholder': "Enter your Email"} ))
+    Email = forms.EmailField(
+        max_length=200,
+        label="User Email",
+        widget=forms.TextInput(attrs={"placeholder": "Enter your Email"}),
+    )
     Age = forms.IntegerField(required=False)
-    Gender = forms.ChoiceField(choices=[('m','male'), ('f', 'female')])
-    birthday = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
-    value = [('s', 'small'), ('m', 'medium'), ('l', 'large')]
+    Gender = forms.ChoiceField(choices=[("m", "male"), ("f", "female")])
+    birthday = forms.DateField(widget=forms.DateInput(attrs={"type": "date"}))
+    value = [("s", "small"), ("m", "medium"), ("l", "large")]
     Size = forms.ChoiceField(choices=value, widget=forms.RadioSelect)
-    meal = [('p', 'pizza'), ('b', 'burger'), ('s','sandwich'), ('c', 'cheese')]
+    meal = [("p", "pizza"), ("b", "burger"), ("s", "sandwich"), ("c", "cheese")]
     Meal = forms.MultipleChoiceField(choices=meal, widget=forms.CheckboxSelectMultiple)
 
     Message = forms.CharField(max_length=200, widget=forms.Textarea)
     file = forms.FileField()
 
+
 class studentData(forms.Form):
-    name = forms.CharField(widget = forms.TextInput)
-    email = forms.CharField(widget = forms.EmailInput)
-    
+    name = forms.CharField(widget=forms.TextInput)
+    email = forms.CharField(widget=forms.EmailInput)
+
     def clean(self):
         clean_data = super().clean()
-        name = self.changed_data['name']
-        email = self.changed_data['email']
-        if name
-    
+        name = self.changed_data["name"]
+        email = self.changed_data["email"]
+        if len(name) < 10:
+            raise forms.ValidationError(
+                "please enter a name with at least 10 characters"
+            )
+        if ".com" not in email:
+            raise forms.ValidationError("Your email must contain .com")
