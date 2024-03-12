@@ -1,8 +1,7 @@
 from django import forms
 
 class contactForm(forms.Form):
-    Name = forms.CharField(max_length=200, label="User name", 
-    widget = (attrs = {'placeholder':'Enter your name'}))
+    Name = forms.CharField(max_length=200, label="User name", )
     Email = forms.EmailField(max_length=200, label="User Email")
     # Age = forms.IntegerField()
     # Gender = forms.ChoiceField(choices=[('m','male'), ('f', 'female')])
