@@ -46,8 +46,8 @@ class studentData(forms.Form):
     
     
 class passwordValidationProject(forms.Form):
-    name = forms.CharField(widget=forms.InputText)
-    password = forms.CharField(widget=forms.passwordInput)
+    name = forms.CharField(widget=forms.TextInput)
+    password = forms.CharField(widget=forms.PasswordInput)
     confirm_password = forms.CharField(widget=forms.PasswordInput)
     
     def clean(self):
