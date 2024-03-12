@@ -30,8 +30,8 @@ class studentData(forms.Form):
 
     def clean(self):
         clean_data = super().clean()
-        name = self.changed_data["name"]
-        email = self.changed_data["email"]
+        name = self.cleaned_data['name']
+        email = self.cleaned_data["email"]
         if len(name) < 10:
             raise forms.ValidationError(
                 "please enter a name with at least 10 characters"
