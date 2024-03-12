@@ -24,17 +24,21 @@ class contactForm(forms.Form):
     file = forms.FileField()
 
 
-class studentData(forms.Form):
-    name = forms.CharField(widget=forms.TextInput)
-    email = forms.CharField(widget=forms.EmailInput)
+# class studentData(forms.Form):
+#     name = forms.CharField(widget=forms.TextInput)
+#     email = forms.CharField(widget=forms.EmailInput)
 
-    def clean(self):
-        clean_data = super().clean()
-        name = self.cleaned_data['name']
-        email = self.cleaned_data["email"]
-        if len(name) < 10:
-            raise forms.ValidationError(
-                "please enter a name with at least 10 characters"
-            )
-        if ".com" not in email:
-            raise forms.ValidationError("Your email must contain .com")
+#     def clean(self):
+#         clean_data = super().clean()
+#         name = self.cleaned_data['name']
+#         email = self.cleaned_data["email"]
+#         if len(name) < 10:
+#             raise forms.ValidationError(
+#                 "please enter a name with at least 10 characters"
+#             )
+#         if ".com" not in email:
+#             raise forms.ValidationError("Your email must contain .com")
+
+class studentData(forms.Form):
+    name = forms.CharField(validators=[validators.MinlengthValidator(10, message="Please enter at least 10 characters")])
+    email = forms.CharField(widget=forms.EmailInput)
