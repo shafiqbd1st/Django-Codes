@@ -18,9 +18,8 @@ def form(request):
 def djangoForm(request):
     if request.method == 'POST':
         form = contactForm(request.POST)
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        return render(request, 'about.html', {'name': name, 'email': email})
+        if form.is_valid():
+            print(form.changed_data)
     else:
         form = contactForm()
     return render(request, 'django_form.html', {'form': form})
