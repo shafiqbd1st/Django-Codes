@@ -18,3 +18,5 @@ from django import forms
 #     Message = forms.CharField(max_length=200, widget=forms.Textarea)
 #     # file = forms.FileField()
 
+class studentData(forms.Form):
+    
