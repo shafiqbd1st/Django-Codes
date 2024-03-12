@@ -46,7 +46,9 @@ class studentData(forms.Form):
     
     
 class passwordValidationProject(forms.Form):
-    name = forms.CharField(validators=[validators.MinLengthValidator(10, message ="Please enter at least 10 characters"])
+    name = forms.CharField(validators=[validators.MinLengthValidator(10, message="Please enter at least 10 characters")])
+    
+        
     
 
     
