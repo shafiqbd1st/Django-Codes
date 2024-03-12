@@ -22,3 +22,9 @@ class studentData(forms.Form):
     name = forms.CharField(widget = forms.TextInput)
     email = forms.CharField(widget = forms.EmailInput)
     
+    def clean(self):
+        clean_data = super().clean()
+        name = self.changed_data['name']
+        email = self.changed_data['email']
+        if name
+    
