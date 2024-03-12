@@ -51,7 +51,11 @@ class passwordValidationProject(forms.Form):
     confirm_password = forms.CharField(widget=forms.PasswordInput)
     
     def clean(self):
-        cleand_data = 
+        cleaned_data = super().clean()
+        val_pass = self.cleaned_data['password']
+        val_compass = self.cleaned_data['confirm_password']
+        if val_pass!= val_compass:
+            raise forms.ValidationError("password does not match")
     
         
     
