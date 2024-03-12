@@ -46,7 +46,12 @@ class studentData(forms.Form):
     
     
 class passwordValidationProject(forms.Form):
-    name = forms.CharField(validators=[validators.MinLengthValidator(10, message="Please enter at least 10 characters")])
+    name = forms.CharField(widget=forms.InputText)
+    password = forms.CharField(widget=forms.passwordInput)
+    confirm_password = forms.CharField(widget=forms.PasswordInput)
+    
+    def clean(self):
+        cleand_data = 
     
         
     
