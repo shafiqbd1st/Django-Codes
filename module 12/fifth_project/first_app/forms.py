@@ -19,4 +19,6 @@ from django import forms
 #     # file = forms.FileField()
 
 class studentData(forms.Form):
+    name = forms.CharField(widget = forms.TextInput)
+    email = forms.CharField(widget = forms.EmailInput)
     
