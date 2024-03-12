@@ -5,11 +5,11 @@ class contactForm(forms.Form):
     Email = forms.EmailField(max_length=200, label="User Email",widget=forms.TextInput(attrs={'placeholder': "Enter your Email"} ))
     Age = forms.IntegerField()
     Gender = forms.ChoiceField(choices=[('m','male'), ('f', 'female')])
-    # value = [('s', 'small'), ('m', 'medium'), ('l', 'large')]
-    # Size = forms.ChoiceField(choices=value)
     # meal = [('p', 'pizza'), ('b', 'burger'), ('s','sandwich'), ('c', 'cheese')]
     # Meal = forms.MultipleChoiceField(choices=meal)
     # Check = forms.BooleanField()
     # Message = forms.CharField(widget=forms.Textarea)
-    birthday = forms.DateField(widget=forms.DateInput(attrs={'type': 'datetime'}))
+    birthday = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+    value = [('s', 'small'), ('m', 'medium'), ('l', 'large')]
+    Size = forms.ChoiceField(choices=value, widget=forms.RadioSelect)
     # file = forms.FileField()
