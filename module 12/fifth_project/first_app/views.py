@@ -6,3 +6,9 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
+def form(request):
+    return render(request, 'form.html')
+
+
+def djangoForm(request):
+    return render(request, 'django.html')
