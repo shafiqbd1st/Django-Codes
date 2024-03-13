@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="container m-auto p-3 w-50">
-        <form>
+        <form method = "POST", action = "/about/">
             <div class="mb-3">
                 <label for="exampleInputName" class="form-label">User Name</label>
                 <input type="email" class="form-control" id="exampleInputName" aria-describedby="emailName" name="name">
