@@ -5,7 +5,10 @@ def home(request):
     return render(request, 'home.html')
 
 def about(request):
-    return render(request, 'about.html')
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        return render(request, 'about.html', {'name': name, 'email': email})
 def form(request):
     return render(request, 'form.html')
 
