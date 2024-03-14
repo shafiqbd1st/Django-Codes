@@ -9,7 +9,8 @@ def about(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         return render(request, 'about.html', {'name': name, 'email': email})
-    else return render(request, 'about.html', {'name': 'None', 'email': 'None'})
+    else:
+        return render(request, "about.html", {"name": "None", "email": "None"})
 def form(request):
     return render(request, 'form.html')
 
