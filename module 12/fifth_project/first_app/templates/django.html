@@ -3,7 +3,7 @@
 {% block content%}
 {% load crispy_forms_tags %}
 {% comment %} <div class='container align-items-center justify-content-center m-auto p-5 text-center'> {% endcomment %}
-    <form methon="post">
+    <form method="post">
          {% csrf_token %}
         {{form|crispy}}
         <button type="submit" class="btn btn-danger">Submit</button>
