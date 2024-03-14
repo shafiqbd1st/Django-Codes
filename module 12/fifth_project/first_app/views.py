@@ -19,4 +19,5 @@ def form(request):
 
 
 def djangoForm(request):
-    return render(request, 'django.html')
+    form = ContactForm()
+    return render(request, 'django.html', {'form': form})
