@@ -26,9 +26,10 @@ def form(request):
 
 def djangoForm(request):
     if request.method == "POST":
-        
+        print("is post")
         form = ContactForm(request.POST)
         if form.is_valid():
+            print("is valid")
             print(form.cleaned_data)
             name = form.cleaned_data['name']
             print(name)
