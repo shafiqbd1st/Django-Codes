@@ -20,5 +20,5 @@ def form(request):
 
 def djangoForm(request):
     form = ContactForm()
-    print(form)
+    print(form.cleaned_data)
     return render(request, 'django.html', {'form': form})
