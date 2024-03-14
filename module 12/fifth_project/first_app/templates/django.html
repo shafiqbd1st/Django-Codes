@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content%}
-<form methon ="post" action="">
-    {{form}}
-    <button type="button" class="btn btn-danger">Submit</button>
-</form>
+<div class='container align-items-center justify-content-center m-auto p-5 text-center'>
+    <form methon="post" action="">
+        {{form.as_p}}
+        <button type="button" class="btn btn-danger">Submit</button>
+    </form>
+</div>
 {% endblock %}
