@@ -2,7 +2,7 @@
 
 {% block content%}
 {% comment %} <div class='container align-items-center justify-content-center m-auto p-5 text-center'> {% endcomment %}
-    <form methon="post" action="">
+    <form methon="post">
          {% csrf_token %}
         {{form.as_p}}
         <button type="button" class="btn btn-danger">Submit</button>
