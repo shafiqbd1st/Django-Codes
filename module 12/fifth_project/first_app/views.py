@@ -6,6 +6,7 @@ def home(request):
 
 def about(request):
     if request.method == 'POST':
+        print(request.POST)
         name = request.POST.get('name')
         email = request.POST.get('email')
         select = request.POST.get('select')
