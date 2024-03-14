@@ -21,5 +21,5 @@ def form(request):
 def djangoForm(request):
     form = ContactForm(request.POST)
     if form.is_valid():
-        print(form.cleaned_data)
+        print(form.clean_data)
     return render(request, 'django.html', {'form': form})
