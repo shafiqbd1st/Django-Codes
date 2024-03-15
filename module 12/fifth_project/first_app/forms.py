@@ -62,3 +62,4 @@ from django import forms
 class StudentData(forms.Form):
     name = forms.CharField(validators=[validators.MaxLength])
     email = forms.EmailField()
+    age = forms.IntegerField()
