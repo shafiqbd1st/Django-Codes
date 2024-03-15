@@ -27,14 +27,13 @@ def form(request):
 def djangoForm(request):
     if request.method == "POST":
         # print("is post")
-        form = ContactForm(request.POST)
+        form = ContactForm(request.POST, request.FILES)
         if form.is_valid():
             # print("is valid")
             print(form.cleaned_data)
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
-           
-        return render(request, "django.html", {"form": form})
+            return render(request, "django.html", {"form": form})
     else:
         form = ContactForm()
-        return render(request, "django.html", {"form": form})
+    return render(request, "django.html", {"form": form})
