@@ -31,14 +31,14 @@ def djangoForm(request):
         if form.is_valid():
             print("is valid")
 
-            File = form.cleaned_data["CV"]
+            # File = form.cleaned_data["CV"]
 
-            with open("./first_app/upload_file/" + File.name, "wb+") as destination:
-                for chunk in File.chunks():
-                    destination.write(chunk)
+            # with open("./first_app/upload_file/" + File.name, "wb+") as destination:
+            #     for chunk in File.chunks():
+            #         destination.write(chunk)
 
             print(form.cleaned_data)
-            return render(request, "django.html", {"form": form})
+            # return render(request, "django.html", {"form": form})
     else:
         form = ContactForm()
-        return render(request, "django.html", {"form": form})
+    return render(request, "django.html", {"form": form})

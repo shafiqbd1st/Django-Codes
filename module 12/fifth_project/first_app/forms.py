@@ -2,8 +2,8 @@ from django import forms
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(label="User Name")
-    email = forms.EmailField(label="User Email")
+    name = forms.CharField(label="User Name", initial="shafiq")
+    # email = forms.EmailField(label="User Email")
     # age = forms.IntegerField()
     # weight = forms.FloatField()
     # CHOICES = [("S", "Small"), ("M", "Medium"), ("L", "Large")]
@@ -11,5 +11,5 @@ class ContactForm(forms.Form):
     
     # CHOICES1 = [("P", "Pizza"), ("M", "Meet"), ("C", "Chicken"), ("I", "Ice-cream")]
     # Meals = forms.MultipleChoiceField(choices=CHOICES1)
-    CV = forms.FileField()
+    # CV = forms.FileField()
     # check = forms.BooleanField()
