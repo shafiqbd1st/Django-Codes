@@ -60,11 +60,5 @@ from django import forms
     #         raise forms.ValidationError("Please enter a valid email address")
 
 class StudentData(forms.Form):
-    name = forms.CharField(
-        label="",
-        required=False,
-        widget=forms.TextInput(attrs={"placeholder": "Enter your Name"}),
-    )
-    email = forms.EmailField(
-        label="", widget=forms.EmailInput(attrs={"placeholder": "Enter your Email"})
-    )
+    name = forms.CharField()
+    email = forms.EmailField()
