@@ -26,3 +26,15 @@ class ContactForm(forms.Form):
         widget=forms.Textarea(attrs={"placeholder": "Enter your message"})
     )
     # check = forms.BooleanField()
+
+
+# check validation
+class StudentData(forms.Form):
+    name = forms.CharField(
+        label="",
+        required=False,
+        widget=forms.TextInput(attrs={"placeholder": "Enter your Name"}),
+    )
+    email = forms.EmailField(
+        label="", widget=forms.EmailInput()(attrs={"placeholder": "Enter your Email"})
+    )
