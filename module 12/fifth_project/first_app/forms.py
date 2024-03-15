@@ -13,4 +13,5 @@ class ContactForm(forms.Form):
     # Meals = forms.MultipleChoiceField(choices=CHOICES1)
     country = forms.CharField(initial="Bangladesh", disabled=True)
     # CV = forms.FileField()
+    message = forms.CharField(widget =forms.Textarea)
     # check = forms.BooleanField()
