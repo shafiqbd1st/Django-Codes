@@ -69,4 +69,17 @@ class StudentData(forms.Form):
     age = forms.IntegerField(validators=[validators.MinValueValidator(21, message="age must be greater than 20")])
     # File = forms.FileField(validators=[validators.FileExtensionValidator(allowed_extensions=["jpg"], message="file extension must be ended with .jpg")])
     message = forms.CharField(validators=[len_check], widget=forms.Textarea(attrs={"placeholder": "Enter your message"}))
+
+class passwordValidator(forms.Form):
+    name = forms.CharField(widget=forms.TextInput())
+    password = forms.CharField(widget=forms.PasswordInput())
+    comfirm_password = forms.CharField(widget=forms.PasswordInput())
     
+    def clean(self):
+        cleaned_data = super().clean()
+        valpassword = self.cleaned_data['password']
+        valcomfirm_password = self.cleaned_data['comfirm_password']
+        
+        if valcomfirm_password != valpassword:
+            raise forms.ValidationError("Passwords doesn't match")
+            

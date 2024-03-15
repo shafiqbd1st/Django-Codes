@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import  StudentData
+from .forms import  StudentData, passwordValidator
 
 
 # Create your views here.
@@ -53,4 +53,12 @@ def StudentForm(request):
         form = StudentData()
     
     return render(request, 'django.html', {'form': form})
-        
+def password_valid(request):
+    if request.method == 'POST':
+        form = passwordValidator(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+    else:
+        form = passwordValidator()
+    
+    return render(request, 'django.html', {'form': form})
