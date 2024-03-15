@@ -6,8 +6,8 @@ class ContactForm(forms.Form):
     email = forms.EmailField(label="User Email")
     age = forms.IntegerField()
     weight = forms.FloatField()
-    CHOICES = [('S', 'Small'), ('M', 'Medium'), ('L', 'Large')]
+    CHOICES = [("S", "Small"), ("M", "Medium"), ("L", "Large")]
     size = forms.ChoiceField(choices=CHOICES)
-    # MEALS =[('P', 'Pizza'), ('M', 'meet'), ('C' 'Chicken')]
-    # foodItems = forms.MultipleChoiceField(choices=MEALS) 
+    MEAL = [("P", "Pizza"), ("M", "meet"), ("C" "Chicken")]
+    foodItems = forms.MultipleChoiceField(choices=MEAL)
     check = forms.BooleanField()
