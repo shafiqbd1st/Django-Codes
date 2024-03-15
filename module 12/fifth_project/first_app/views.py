@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import ContactForm, StudentData
+from .forms import  StudentData
 
 
 # Create your views here.
