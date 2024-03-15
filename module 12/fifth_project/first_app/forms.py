@@ -51,11 +51,11 @@ class StudentData(forms.Form):
     
     def clean(self):
         cleaned_data = super().clean()
-        name = self.cleaned_data['name']
-        email = self.cleaned_data['email']
-        if len(name) < 10:
+        namel = self.cleaned_data['name']
+        emaill = self.cleaned_data['email']
+        if len(namel) < 10:
             raise forms.ValidationError("Enter a name with at least 10 character")
-        if '.com' not in email:
+        if '.com' not in emaill:
             raise forms.ValidationError("Enter a valid email address")
-        return cleaned_data
+
     
