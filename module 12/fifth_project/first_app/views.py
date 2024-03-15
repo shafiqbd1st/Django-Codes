@@ -36,4 +36,4 @@ def djangoForm(request):
             return render(request, "django.html", {"form": form})
     else:
         form = ContactForm()
-    return render(request, "django.html", {"form": form})
+        return render(request, "django.html", {"form": form})
