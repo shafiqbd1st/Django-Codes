@@ -8,17 +8,18 @@ class ContactForm(forms.Form):
         widget=forms.TextInput(attrs={"placeholder": "Enter your Name"}),
     )
     email = forms.EmailField(
-        label="",
-        widget=forms.TextInput(attrs={"placeholder": "Enter your Email"})
+        label="", widget=forms.TextInput(attrs={"placeholder": "Enter your Email"})
     )
-    birthday = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+    birthday = forms.DateField(widget=forms.DateInput(attrs={"type": "date"}))
     # age = forms.IntegerField()
     # weight = forms.FloatField()
-    # CHOICES = [("S", "Small"), ("M", "Medium"), ("L", "Large")]
-    # size = forms.ChoiceField(choices=CHOICES)
+    CHOICES = [("S", "Small"), ("M", "Medium"), ("L", "Large")]
+    size = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
 
     CHOICES1 = [("P", "Pizza"), ("M", "Meet"), ("C", "Chicken"), ("I", "Ice-cream")]
-    Meals = forms.MultipleChoiceField(choices=CHOICES1, widget=forms.CheckboxSelectMultiple)
+    Meals = forms.MultipleChoiceField(
+        choices=CHOICES1, widget=forms.CheckboxSelectMultiple
+    )
     country = forms.CharField(initial="Bangladesh", disabled=True)
     # CV = forms.FileField()
     message = forms.CharField(
