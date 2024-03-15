@@ -9,7 +9,7 @@ class ContactForm(forms.Form):
     )
     email = forms.EmailField(
         label="",
-        widget=forms.TextInput(attrs={"placeholder": "Enter your Email"}),
+        widget=forms.TextInput(attrs={"placeholder": "Enter your Email"})
     )
     # age = forms.IntegerField()
     # weight = forms.FloatField()
