@@ -36,5 +36,5 @@ class StudentData(forms.Form):
         widget=forms.TextInput(attrs={"placeholder": "Enter your Name"}),
     )
     email = forms.EmailField(
-        label="", widget=forms.TextInput(attrs={"placeholder": "Enter your Email"})
+        label="", widget=forms.EmailInput(attrs={"placeholder": "Enter your Email"})
     )
