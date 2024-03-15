@@ -5,9 +5,12 @@ class ContactForm(forms.Form):
     name = forms.CharField(
         label="User Name",
         required=False,
-        widget=forms.TextInput(attrs={"placeholder": "Enter your Name"})
+        widget=forms.TextInput(attrs={"placeholder": "Enter your Name"}),
     )
-    # email = forms.EmailField(label="User Email")
+    email = forms.EmailField(
+        label="User Email",
+        widget=forms.TextInput(attrs={"placeholder": "Enter your Email"}),
+    )
     # age = forms.IntegerField()
     # weight = forms.FloatField()
     # CHOICES = [("S", "Small"), ("M", "Medium"), ("L", "Large")]
