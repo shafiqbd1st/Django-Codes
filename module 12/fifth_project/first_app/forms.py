@@ -56,6 +56,7 @@ class StudentData(forms.Form):
         
         if len(valname) < 10:
             raise forms.ValidationError("Enter a name with at least 10 character")
-        if '.com' not in 
+        if '.com' not in valemail:
+            raise forms.ValidationError("Please enter a valid email address")
 
     
