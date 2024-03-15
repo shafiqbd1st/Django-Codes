@@ -38,13 +38,13 @@ class StudentData(forms.Form):
     email = forms.EmailField(
         label="", widget=forms.EmailInput(attrs={"placeholder": "Enter your Email"})
     )
-    def clean_name(self):
-        name = self.cleaned_data['name']
-        if len(name) < 10:
-            raise forms.ValidationError("Enter a name with at least 10 character")
-        return name
-    def clean_email(self):
-        email = self.cleaned_data['email']
-        if '.com' not in email:
-            raise forms.ValidationError("Enter a valid email address")
-        return email
+    # def clean_name(self):
+    #     name = self.cleaned_data['name']
+    #     if len(name) < 10:
+    #         raise forms.ValidationError("Enter a name with at least 10 character")
+    #     return name
+    # def clean_email(self):
+    #     email = self.cleaned_data['email']
+    #     if '.com' not in email:
+    #         raise forms.ValidationError("Enter a valid email address")
+    #     return email
