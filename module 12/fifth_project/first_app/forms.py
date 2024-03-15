@@ -68,5 +68,5 @@ class StudentData(forms.Form):
     email = forms.EmailField()
     age = forms.IntegerField(validators=[validators.MinValueValidator(21, message="age must be greater than 20")])
     # File = forms.FileField(validators=[validators.FileExtensionValidator(allowed_extensions=["jpg"], message="file extension must be ended with .jpg")])
-    message = forms.CharField(validators=[len_check])
+    message = forms.CharField(validators=[len_check], widget=forms.Textarea(attrs={"placeholder": "Enter your message"}))
     
