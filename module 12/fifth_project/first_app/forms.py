@@ -61,5 +61,5 @@ from django import forms
 from django.core import validators
 class StudentData(forms.Form):
     name = forms.CharField(validators=[validators.MinLengthValidator(10, message="Please enter at least 10 characters")])
-    email = forms.EmailField()
-    age = forms.IntegerField()
+    email = forms.EmailField(validators=[validators.EmailValidator(message="Enter a valid Email")])
+    age = forms.IntegerField(validators=[validators.MinValueValidator(20, message="age must be greater than 20")])
