@@ -30,14 +30,14 @@ def djangoForm(request):
         form = ContactForm(request.POST, request.FILES)
         if form.is_valid():
             print("is valid")
-            print(form.cleaned_data)
-            name = form.cleaned_data["name"]
-            email = form.cleaned_data["email"]
-            File = form.cleaned_data["file"]
-            with open('./upload_file' + File.name, 'wb+') as destination:
+
+            File = form.cleaned_data["CV"]
+
+            with open(".first_app/upload_file/" + File.name, "wb+") as destination:
                 for chunk in File.chunks():
                     destination.write(chunk)
-                    
+
+            print(form.cleaned_data)
             return render(request, "django.html", {"form": form})
     else:
         form = ContactForm()
