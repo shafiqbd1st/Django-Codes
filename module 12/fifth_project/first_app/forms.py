@@ -38,27 +38,27 @@ from django import forms
 #     email = forms.EmailField(
 #         label="", widget=forms.EmailInput(attrs={"placeholder": "Enter your Email"})
 #     )
-    # def clean_name(self):
-    #     name = self.cleaned_data['name']
-    #     if len(name) < 10:
-    #         raise forms.ValidationError("Enter a name with at least 10 character")
-    #     return name
-    # def clean_email(self):
-    #     email = self.cleaned_data['email']
-    #     if '.com' not in email:
-    #         raise forms.ValidationError("Enter a valid email address")
-    #     return email
-    
-    # def clean(self):
-    #     cleaned_data = super().clean()
-    #     valname = self.cleaned_data['name']
-    #     valemail = self.cleaned_data['email']
-        
-    #     if len(valname) < 10:
-    #         raise forms.ValidationError("Enter a name with at least 10 character")
-    #     if '.com' not in valemail:
-    #         raise forms.ValidationError("Please enter a valid email address")
+# def clean_name(self):
+#     name = self.cleaned_data['name']
+#     if len(name) < 10:
+#         raise forms.ValidationError("Enter a name with at least 10 character")
+#     return name
+# def clean_email(self):
+#     email = self.cleaned_data['email']
+#     if '.com' not in email:
+#         raise forms.ValidationError("Enter a valid email address")
+#     return email
 
+# def clean(self):
+#     cleaned_data = super().clean()
+#     valname = self.cleaned_data['name']
+#     valemail = self.cleaned_data['email']
+
+#     if len(valname) < 10:
+#         raise forms.ValidationError("Enter a name with at least 10 character")
+#     if '.com' not in valemail:
+#         raise forms.ValidationError("Please enter a valid email address")
+from django.core import validators
 class StudentData(forms.Form):
     name = forms.CharField(validators=[validators.MinLengthValidator(10, message="Please enter at least 10 characters")])
     email = forms.EmailField()
