@@ -7,3 +7,5 @@ class ContactForm(forms.Form):
     age = forms.IntegerField()
     weight = forms.FloatField()
     check = forms.BooleanField()
+    CHOICES = [('S', 'Small'), ('M', 'Medium'), ('L', 'Large')]
+    size = forms.ChoiceField(choices=CHOICES)
