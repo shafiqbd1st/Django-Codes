@@ -59,8 +59,14 @@ from django import forms
 #     if '.com' not in valemail:
 #         raise forms.ValidationError("Please enter a valid email address")
 from django.core import validators
+def len_check(value):
+    if len(value) < 10:
+        raise forms.ValidationError("Enter a message at least 10 character")
+    
 class StudentData(forms.Form):
     name = forms.CharField(validators=[validators.MinLengthValidator(10, message="Please enter at least 10 characters")])
     email = forms.EmailField()
     age = forms.IntegerField(validators=[validators.MinValueValidator(21, message="age must be greater than 20")])
-    File = forms.FileField(validators=[validators.FileExtensionValidator(allowed_extensions=["jpg"], message="file extension must be ended with .jpg")])
+    # File = forms.FileField(validators=[validators.FileExtensionValidator(allowed_extensions=["jpg"], message="file extension must be ended with .jpg")])
+    message = forms.CharField(validators=[len_check])
+    
