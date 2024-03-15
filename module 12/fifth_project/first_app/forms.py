@@ -17,8 +17,8 @@ class ContactForm(forms.Form):
     # CHOICES = [("S", "Small"), ("M", "Medium"), ("L", "Large")]
     # size = forms.ChoiceField(choices=CHOICES)
 
-    # CHOICES1 = [("P", "Pizza"), ("M", "Meet"), ("C", "Chicken"), ("I", "Ice-cream")]
-    # Meals = forms.MultipleChoiceField(choices=CHOICES1)
+    CHOICES1 = [("P", "Pizza"), ("M", "Meet"), ("C", "Chicken"), ("I", "Ice-cream")]
+    Meals = forms.MultipleChoiceField(choices=CHOICES1, widget=forms.CheckboxSelectMultiple)
     country = forms.CharField(initial="Bangladesh", disabled=True)
     # CV = forms.FileField()
     message = forms.CharField(
