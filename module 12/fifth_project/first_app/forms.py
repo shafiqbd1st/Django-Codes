@@ -3,6 +3,7 @@ from django import forms
 
 class ContactForm(forms.Form):
     name = forms.CharField(label="User Name", required=False)
+    country = forms.CharField(initial="Bangladesh", disabled=True)
     # email = forms.EmailField(label="User Email")
     # age = forms.IntegerField()
     # weight = forms.FloatField()
