@@ -29,15 +29,15 @@ from django import forms
 
 
 # check validation
-class StudentData(forms.Form):
-    name = forms.CharField(
-        label="",
-        required=False,
-        widget=forms.TextInput(attrs={"placeholder": "Enter your Name"}),
-    )
-    email = forms.EmailField(
-        label="", widget=forms.EmailInput(attrs={"placeholder": "Enter your Email"})
-    )
+# class StudentData(forms.Form):
+#     name = forms.CharField(
+#         label="",
+#         required=False,
+#         widget=forms.TextInput(attrs={"placeholder": "Enter your Name"}),
+#     )
+#     email = forms.EmailField(
+#         label="", widget=forms.EmailInput(attrs={"placeholder": "Enter your Email"})
+#     )
     # def clean_name(self):
     #     name = self.cleaned_data['name']
     #     if len(name) < 10:
@@ -49,14 +49,22 @@ class StudentData(forms.Form):
     #         raise forms.ValidationError("Enter a valid email address")
     #     return email
     
-    def clean(self):
-        cleaned_data = super().clean()
-        valname = self.cleaned_data['name']
-        valemail = self.cleaned_data['email']
+    # def clean(self):
+    #     cleaned_data = super().clean()
+    #     valname = self.cleaned_data['name']
+    #     valemail = self.cleaned_data['email']
         
-        if len(valname) < 10:
-            raise forms.ValidationError("Enter a name with at least 10 character")
-        if '.com' not in valemail:
-            raise forms.ValidationError("Please enter a valid email address")
+    #     if len(valname) < 10:
+    #         raise forms.ValidationError("Enter a name with at least 10 character")
+    #     if '.com' not in valemail:
+    #         raise forms.ValidationError("Please enter a valid email address")
 
-    
+class StudentData(forms.Form):
+    name = forms.CharField(
+        label="",
+        required=False,
+        widget=forms.TextInput(attrs={"placeholder": "Enter your Name"}),
+    )
+    email = forms.EmailField(
+        label="", widget=forms.EmailInput(attrs={"placeholder": "Enter your Email"})
+    )
