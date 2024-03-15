@@ -60,6 +60,6 @@ from django import forms
     #         raise forms.ValidationError("Please enter a valid email address")
 
 class StudentData(forms.Form):
-    name = forms.CharField(validators=[validators.MaxLength])
+    name = forms.CharField()
     email = forms.EmailField()
     age = forms.IntegerField()
