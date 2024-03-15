@@ -2,7 +2,8 @@
 
 {% block content%}
 {% load crispy_forms_tags %}
-<div class='container align-items-center justify-content-center m-auto p-5 w-50'>
+<div class='container align-items-center justify-content-center m-auto p-5 w-50'
+enctype = "multipart/form-data">
     <form method="post">
          {% csrf_token %}
         {{form|crispy}}

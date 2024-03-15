@@ -11,5 +11,5 @@ class ContactForm(forms.Form):
     
     CHOICES1 = [("P", "Pizza"), ("M", "Meet"), ("C", "Chicken"), ("I", "Ice-cream")]
     Meals = forms.MultipleChoiceField(choices=CHOICES1)
-    
+    CV = forms.FileField()
     check = forms.BooleanField()
