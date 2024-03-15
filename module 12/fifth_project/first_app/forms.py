@@ -11,6 +11,7 @@ class ContactForm(forms.Form):
         label="",
         widget=forms.TextInput(attrs={"placeholder": "Enter your Email"})
     )
+    birthday = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
     # age = forms.IntegerField()
     # weight = forms.FloatField()
     # CHOICES = [("S", "Small"), ("M", "Medium"), ("L", "Large")]
