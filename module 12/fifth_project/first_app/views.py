@@ -31,8 +31,9 @@ def djangoForm(request):
         if form.is_valid():
             print("is valid")
             print(form.cleaned_data)
-            # name = form.cleaned_data["name"]
-            # email = form.cleaned_data["email"]
+            name = form.cleaned_data["name"]
+            email = form.cleaned_data["email"]
+            File = form.cleaned_data["file"]
             return render(request, "django.html", {"form": form})
     else:
         form = ContactForm()
