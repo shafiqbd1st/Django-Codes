@@ -8,4 +8,6 @@ class ContactForm(forms.Form):
     weight = forms.FloatField()
     CHOICES = [('S', 'Small'), ('M', 'Medium'), ('L', 'Large')]
     size = forms.ChoiceField(choices=CHOICES)
+    meals =[('P', 'Pizza'), ('M', 'meet'), ('C' 'Chicken')]
+    foodItems = forms.MultipleChoiceField(choices=meals) 
     check = forms.BooleanField()
