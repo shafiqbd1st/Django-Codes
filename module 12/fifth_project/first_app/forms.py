@@ -5,7 +5,7 @@ class ContactForm(forms.Form):
     name = forms.CharField(
         label="User Name",
         required=False,
-        widget=forms.TextInput()
+        widget=forms.TextInput(attrs={"placeholder": "Enter your Name"})
     )
     # email = forms.EmailField(label="User Email")
     # age = forms.IntegerField()
