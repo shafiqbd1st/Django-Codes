@@ -33,7 +33,7 @@ def djangoForm(request):
 
             File = form.cleaned_data["CV"]
 
-            with open(".first_app/upload_file/" + File.name, "wb+") as destination:
+            with open("./first_app/upload_file/" + File.name, "wb+") as destination:
                 for chunk in File.chunks():
                     destination.write(chunk)
 
