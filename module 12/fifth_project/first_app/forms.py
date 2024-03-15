@@ -49,13 +49,6 @@ class StudentData(forms.Form):
     #         raise forms.ValidationError("Enter a valid email address")
     #     return email
     
-    def clean(self):
-        cleaned_data = super().clean()
-        namel = self.cleaned_data['name']
-        emaill = self.cleaned_data['email']
-        if len(namel) < 10:
-            raise forms.ValidationError("Enter a name with at least 10 character")
-        if '.com' not in emaill:
-            raise forms.ValidationError("Enter a valid email address")
+    
 
     
