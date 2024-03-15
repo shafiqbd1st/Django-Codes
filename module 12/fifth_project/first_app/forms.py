@@ -3,12 +3,12 @@ from django import forms
 
 class ContactForm(forms.Form):
     name = forms.CharField(
-        label="User Name",
+        label="",
         required=False,
         widget=forms.TextInput(attrs={"placeholder": "Enter your Name"}),
     )
     email = forms.EmailField(
-        label="User Email",
+        label="",
         widget=forms.TextInput(attrs={"placeholder": "Enter your Email"}),
     )
     # age = forms.IntegerField()
