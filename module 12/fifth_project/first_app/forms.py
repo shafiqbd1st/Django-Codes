@@ -3,7 +3,6 @@ from django import forms
 
 class ContactForm(forms.Form):
     name = forms.CharField(label="User Name", required=False)
-    country = forms.CharField(initial="Bangladesh", disabled=True)
     # email = forms.EmailField(label="User Email")
     # age = forms.IntegerField()
     # weight = forms.FloatField()
@@ -12,5 +11,6 @@ class ContactForm(forms.Form):
 
     # CHOICES1 = [("P", "Pizza"), ("M", "Meet"), ("C", "Chicken"), ("I", "Ice-cream")]
     # Meals = forms.MultipleChoiceField(choices=CHOICES1)
+    country = forms.CharField(initial="Bangladesh", disabled=True)
     # CV = forms.FileField()
     # check = forms.BooleanField()
