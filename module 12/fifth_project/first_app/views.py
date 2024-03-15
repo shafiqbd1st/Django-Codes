@@ -31,8 +31,9 @@ def djangoForm(request):
         if form.is_valid():
             print("is valid")
 
+            # read data upload file
+            
             # File = form.cleaned_data["CV"]
-
             # with open("./first_app/upload_file/" + File.name, "wb+") as destination:
             #     for chunk in File.chunks():
             #         destination.write(chunk)
