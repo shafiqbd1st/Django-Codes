@@ -5,4 +5,4 @@ class Student(models.Model):
     name = models.CharField(max_length=20)
     roll = models.IntegerField(primary_key= True)
     address = models.TextField()
-    father_name = models.CharField(max_length=20)
+    father_name = models.CharField(max_length=20, default="Rana")
