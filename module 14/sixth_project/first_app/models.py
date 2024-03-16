@@ -6,3 +6,6 @@ class Student(models.Model):
     roll = models.IntegerField(primary_key= True)
     address = models.TextField()
     father_name = models.CharField(max_length=20, default="Rana")
+
+    def __str__(self):
+        return f"Roll: {self.roll} Name: {self.name}"
