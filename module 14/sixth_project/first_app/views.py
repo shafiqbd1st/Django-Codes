@@ -8,5 +8,4 @@ def home(request):
 
 def delete_student(request, roll):
     student = models.Student.objects.get(pk = roll).delete()
-    print(student)
     return redirect("homepage")
