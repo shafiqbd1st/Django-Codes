@@ -6,6 +6,7 @@ def home(request):
     print(student)
     return render(request,'home.html', {'data': student})
 
+
 def delete_student(request, roll):
     student = models.Student.objects.get(pk = roll).delete()
     return redirect("homepage")
