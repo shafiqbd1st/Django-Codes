@@ -8,4 +8,4 @@ class Student(models.Model):
     father_name = models.CharField(max_length=20, default="Rana")
 
     def __str__(self):
-        return f"Roll: {self.roll} Name: {self.name}"
+        return f"Roll: {self.roll} Name: {self.name} Father Name: {self.father_name} Address: {self.address}"
