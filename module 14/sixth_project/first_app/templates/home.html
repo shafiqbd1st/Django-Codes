@@ -21,45 +21,36 @@
   </head>
   <body>
     <h1 class='p-5'>Welcome to the home page</h1>
+    
+    <div class='container m-auto justify-content-center align-items-center text-center bg-primary'>
+
+ 
     {% if data%}
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col">Roll</th>
+          <th scope="col">Name</th>
+          <th scope="col">Father Name</th>
+          <th scope="col">Address</th>
         </tr>
       </thead>
       <tbody>
+        {%for st in data%}
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td>{{st.roll}}</td>
+          <td>{{st.name}}</td>
+          <td>{{st.father_name}}</td>
+          <td>{{st.address}}</td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        {%endfor%}
       </tbody>
     </table>
-    {%for st in data%}
-    {%endfor%}
     {%else%}
       <h1>no data available in table</h1>
     {%endif%}
 
-
+   </div>
 
     <!-- add script file -->
     <script
