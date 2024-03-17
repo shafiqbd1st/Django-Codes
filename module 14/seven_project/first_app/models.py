@@ -7,3 +7,5 @@ class studentModel(models.Model):
     mother_name = models.CharField(max_length=30)
     address = models.TextField()
 # Create your models here.
+    def __str__(self) -> str:
+        return f'Name: {self.name}'
