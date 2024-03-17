@@ -8,3 +8,6 @@ class studentModle(models.Model):
     age = models.IntegerField()    
     father_name = models.CharField(max_length=20)
     mother_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return f'Name: {self.name}'
