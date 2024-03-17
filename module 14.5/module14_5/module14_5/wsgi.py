@@ -1,5 +1,5 @@
 """
-WSGI config for Practice14_5 project.
+WSGI config for module14_5 project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Practice14_5.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'module14_5.settings')
 
 application = get_wsgi_application()
