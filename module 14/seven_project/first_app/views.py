@@ -8,6 +8,6 @@ def home(request):
         form = studentForm(request.POST)
         if form.is_valid():
             form.save()
-        else:
-            form = studentForm()
+    else:
+        form = studentForm()
     return render(request, 'home.html', {'form': form})
