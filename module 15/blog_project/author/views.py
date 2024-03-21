@@ -6,8 +6,6 @@ def add_author(request):
         author_form = forms.AuthorForm(request.POST)
         if author_form.is_valid():
             author_form.save()
-            return redirect('add_author')
-  
     else:
         author_form = forms.Author()
     return render(request, "add_author.html", {'form': author_form})
