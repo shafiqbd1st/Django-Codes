@@ -7,5 +7,5 @@ def add_author(request):
         if author_form.is_valid():
             author_form.save()
     else:
-        author_form = forms.Author()
+        author_form = forms.AuthorForm()
     return render(request, "add_author.html", {'form': author_form})
