@@ -11,4 +11,4 @@ def add_profile(request):
 
     else:
         profile_form = forms.ProfileForm()
-    return render(request, "add_profile.html", {"form": profile_form})
+        return render(request, "add_profile.html", {"form": profile_form})
