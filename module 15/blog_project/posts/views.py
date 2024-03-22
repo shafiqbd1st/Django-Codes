@@ -13,4 +13,4 @@ def add_post(request):
 
     else:
         post_form = forms.PostFrom()
-        return render(request, "add_category.html", {"form": post_form})
+        return render(request, "add_post.html", {"form": post_form})
