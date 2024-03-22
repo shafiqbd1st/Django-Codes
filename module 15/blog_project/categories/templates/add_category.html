@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{%blcok content%}
+{%load crispy_forms_tags%}
+
+<div class="container w-50 p-3 m-auto">
+    <form method = "POST" action="">
+        {% csrf_token %}
+        {{form|crispy}}
+        <button type='submit' class="btn btn-primary">Submit</button>           
+    </form>
+</div>
+
+{%endblock%}
