@@ -15,13 +15,14 @@ def add_post(request):
     else:
         post_form = forms.PostFrom()
         return render(request, "add_post.html", {"form": post_form})
-def add_post(request):
+def edit_post(request, id):
+    post = models.Post.objects.get(pk=id)
+    post_form = forms.PostFrom(instance=post)
+    
     if request.method == "POST":
-        post_form = forms.PostFrom(request.POST)
+        post_form = forms.PostFrom(request.POST, instance=post)
         if post_form.is_valid():
             post_form.save()
-            return redirect("add_post")
+            return redirect("homepage")
 
-    else:
-        post_form = forms.PostFrom()
-        return render(request, "add_post.html", {"form": post_form})
+    return render(request, "add_post.html", {"form": post_form})
