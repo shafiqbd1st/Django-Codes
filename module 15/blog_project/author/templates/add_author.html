@@ -2,6 +2,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="container w-50 p-3 m-auto">
+    <h1>This is Author page</h1>
     <form method = "POST" action="">
         {% csrf_token %}
         {{form|crispy}}
