@@ -11,7 +11,7 @@
                 <p class="card-text">Category:
                     {%for item in post.category.all %}
                    
-                    <button type="button" class="btn btn-danger m-2" disable>{{item.name}}</button>
+                <button class="btn btn-danger m-1" disabled>{{item.name}}</button>
                     {%endfor %}
                 </p>
                 <a href="#" class="btn btn-primary">Details</a>
