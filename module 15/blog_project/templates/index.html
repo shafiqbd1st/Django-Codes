@@ -2,6 +2,20 @@
 {%block content%}
 <div class="container d-flex flex-wrap justify-content-center px-5 pt-5">
     {% for post in data %}
-    
+    <div class="col-sm-3">
+        <div class="card m-2">
+            <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5>
+                <p class="card-text">{{post.content}}</p>
+                <p class="card-text">Author: {{post.author.name}}</p>
+                <p class="card-text">Category:
+                    {%for item in post.category.all %}
+                    <button calss="btn btn-info btn-sm m-2" disable>{{item.name}}</button>
+                    {%endfor %}
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
 </div>
 {%endblock%}
