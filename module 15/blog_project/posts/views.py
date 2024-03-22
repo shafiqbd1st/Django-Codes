@@ -1,14 +1,16 @@
 from django.shortcuts import render, redirect
-from .import forms
-from .import models
+from . import forms
+
 # Create your views here.
+
 
 def add_post(request):
     if request.method == "POST":
-        post_form = forms.PostForm(request.POST)
+        post_form = forms.PostFrom(request.POST)
         if post_form.is_valid():
             post_form.save()
             return redirect("add_post")
+
     else:
-        post_form = forms.PostForm()
-    return render(request, "add_post.html", {"post_form": post_form})
+        post_form = forms.PostFrom()
+        return render(request, "add_category.html", {"form": post_form})
