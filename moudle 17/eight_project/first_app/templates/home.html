@@ -22,12 +22,13 @@
   <body>
 
    {% load crispy_forms_tags %}
-   <div class="container w-50 p-3 m-auto">
-       <form method="POST" action="">
+   <div class="container w-50 p-3 m-auto" >
+       <form method="POST" action="" novalidate>
+        {% csrf_token %}
            {% for i in form %}
            {{i.label_tag}}
            {{i}}
-           {{i.errors}}
+           {{i.errors |striptags}}
            {%endfor%}
            <button type='submit' class="btn btn-primary">Submit</button>
        </form>
