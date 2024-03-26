@@ -2,4 +2,10 @@ from django.shortcuts import render
 from .import forms
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    if request.method == "POST":
+        form = forms.UserRegisterForm(request.POST)
+        if form.is_valid():
+            print(form)
+    else:
+        form = forms.UserRegisterForm()
+    return render(request, 'home.html', {'form': form})
