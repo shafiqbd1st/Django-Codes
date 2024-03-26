@@ -7,6 +7,7 @@ def home(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             print(form)
+            
     else:
         form = UserRegisterForm()
     return render(request, 'home.html', {'form': form})
