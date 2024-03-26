@@ -25,7 +25,11 @@
    <div class="container w-50 p-3 m-auto" >
        <form method="POST" action="" novalidate>
        {% csrf_token %}
-       {{form|crispy}}
+       {% for fm in form %}
+       {{fm.label_tag}}
+       {{fm}}
+       {{fm.errors}}
+       {%endfor%}
         <button type='submit' class="btn btn-primary">Submit</button>
        </form>
    </div>
