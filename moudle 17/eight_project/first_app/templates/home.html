@@ -24,12 +24,12 @@
    {% load crispy_forms_tags %}
 
        <form style="width: 80%; margin: auto"  method="POST" action="" novalidate>
-       {% csrf_token %}
-       {% for fm in form %}
-       {{fm.label_tag}} </br>
-       {{fm}}</br>
-       {{fm.errors}}
-       {%endfor%}
+        {% csrf_token %}
+        {% for fm in form %}
+        {{fm.label_tag}} </br>
+        {{fm}}</br>
+        {{fm.errors}}
+        {%endfor%} 
         <button type='submit' class="btn mt-3 btn-primary">Submit</button>
        </form>
 
