@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .import forms
+from .forms import UserRegisterForm
+
 # Create your views here.
 def home(request):
     if request.method == "POST":
